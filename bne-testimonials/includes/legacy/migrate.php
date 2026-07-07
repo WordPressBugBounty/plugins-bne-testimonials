@@ -5,8 +5,7 @@
  * 	@author		Kerry Kline
  * 	@copyright	Copyright (c) 2018, Kerry Kline
  * 	@link		http://www.bnecreative.com
- *
- *	@since 		v2.8.2
+ *	@updated	v2.0.8.1
  *
  *	@notice		As of v2.0 these shortcode are no longer maintained
  *				and are depreciated! they have been replaced with
@@ -37,6 +36,11 @@ function bne_testimonials_list_shortcode( $atts ) {
 		'id'				=> 	''
 
 	), $atts, 'bne_testimonials_list' );
+	
+	// Sanitize user inputs
+	foreach( $atts as $index => $att ) {
+		$atts[$index] = esc_attr($att);
+	}
 
 	$output = '';
 	if( current_user_can('edit_pages') ) {
@@ -70,8 +74,13 @@ function bne_testimonials_slider_shortcode( $atts ) {
 		'animation_speed'	=> '700',		// Flexslider: animationSpeed
 		'smooth' 			=> 'true',		// Flexslider: smoothHeight
 		'speed'				=> '7000'		// Flexsliser: slideshowSpeed
-	), $atts, 'bne_testimonials_list' );
-
+	), $atts, 'bne_testimonials_slider' );
+	
+	// Sanitize user inputs
+	foreach( $atts as $index => $att ) {
+		$atts[$index] = esc_attr($att);
+	}
+	
 	$output = '';
 	if( current_user_can('edit_pages') ) {
 		$output .= '<div class="bne-testimonial-warning">Admin Notice (not public): This shortcode was depreciated on June 16, 2017 and will be removed in a future update. Please update this shortcode to use [bne_testimonials layout="slider"].</div>';

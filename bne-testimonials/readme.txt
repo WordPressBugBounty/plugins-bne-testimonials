@@ -3,8 +3,8 @@ Author URI: http://www.bnecreative.com
 Contributors: bluenotes
 Tags: testimonials, testimonial widget, random testimonials, flexslider, feedback, reviews
 Requires at least: 5.0
-Tested up to: 6.0
-Stable tag: 2.0.8
+Tested up to: 7.0
+Stable tag: 2.0.8.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -91,14 +91,17 @@ Possible, but most likely not in the free version. If you would like to see new 
 
 == Changelog ==
 
-= 2.0.8 January 25, 2023
+= 2.0.8.1 July 7, 2026 =
+* Security: Added output escaping to (LEGACY) shortcode attributes.
+
+= 2.0.8 January 25, 2023 =
 * Security: Added output escaping to shortcode attributes.
 
 
-= 2.0.7 December 16, 2020
+= 2.0.7 December 16, 2020 =
 * Inline JS adjustment for the slider when using jQuery 3.5+
 
-= 2.0.6 May 29, 2020
+= 2.0.6 May 29, 2020 =
 * Fix: Updated the load function for jQuery v3.x when using the slider layout.
 
 = 2.0.5 March 13, 2020 =
