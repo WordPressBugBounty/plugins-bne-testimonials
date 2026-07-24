@@ -4,7 +4,7 @@ Contributors: bluenotes
 Tags: testimonials, testimonial widget, random testimonials, flexslider, feedback, reviews
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 2.0.8.1
+Stable tag: 2.0.8.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -90,6 +90,9 @@ Possible, but most likely not in the free version. If you would like to see new 
 
 
 == Changelog ==
+
+= 2.0.8.2 July 24, 2026 =
+* Security: Added output escaping to the shortcode JS numeric attributes. Credit to testoun.
 
 = 2.0.8.1 July 7, 2026 =
 * Security: Added output escaping to (LEGACY) shortcode attributes.

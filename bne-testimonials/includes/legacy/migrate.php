@@ -5,7 +5,7 @@
  * 	@author		Kerry Kline
  * 	@copyright	Copyright (c) 2018, Kerry Kline
  * 	@link		http://www.bnecreative.com
- *	@updated	v2.0.8.1
+ *	@updated	v2.0.8.2
  *
  *	@notice		As of v2.0 these shortcode are no longer maintained
  *				and are depreciated! they have been replaced with
@@ -87,7 +87,7 @@ function bne_testimonials_slider_shortcode( $atts ) {
 	}
 
 	$output .= '<!-- Legacy testimonial shortcode used and migrated to 2x -->';
-	$output .= do_shortcode('[bne_testimonials layout="slider" limit="'.$atts['post'].'" orderby="'.$atts['order'].'" order="'.$atts['order_direction'].'" name="'.$atts['name'].'" image="'.$atts['image'].'" image_style="'.$atts['image_style'].'" category="'.$atts['category'].'" class="'.$atts['class'].'" nav="'.$atts['nav'].'" arrows="'.$atts['arrows'].'" pause="'.$atts['pause'].'" animation="'.$atts['animation'].'" animation_speed="'.$atts['animation_speed'].'" smooth="'.$atts['smooth'].'" speed="'.$atts['speed'].'"]');
+	$output .= do_shortcode('[bne_testimonials layout="slider" limit="'.$atts['post'].'" orderby="'.$atts['order'].'" order="'.$atts['order_direction'].'" name="'.$atts['name'].'" image="'.$atts['image'].'" image_style="'.$atts['image_style'].'" category="'.$atts['category'].'" class="'.$atts['class'].'" nav="'.$atts['nav'].'" arrows="'.$atts['arrows'].'" pause="'.$atts['pause'].'" animation="'.$atts['animation'].'" animation_speed="'.intval($atts['animation_speed']).'" smooth="'.$atts['smooth'].'" speed="'.intval($atts['speed']).'"]');
 	return $output;
 }
 add_shortcode( 'bne_testimonials_slider', 'bne_testimonials_slider_shortcode' );

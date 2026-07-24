@@ -38,7 +38,7 @@ function bne_testimonials_get_template( $part, $atts, $api = null, $return = 're
  *	Shortcode
  *	
  *	@since		v2.0
- *	@updated	v2.0.8
+ *	@updated	v2.0.8.2
  *
 */
 function bne_testimonials_shortcode( $atts ) {
@@ -182,24 +182,27 @@ function bne_testimonials_shortcode( $atts ) {
 					
 					// Assign a random ID each slider instance
 					$random_id = rand( 1,1000 );
-			
+					
+					// Flexslider Options
+					$flex_options = array(
+						'animation'       => $atts['animation'],
+						'animationSpeed'  => intval( $atts['animation_speed'] ),
+						'smoothHeight'    => filter_var( $atts['smooth'], FILTER_VALIDATE_BOOLEAN ),
+						'pauseOnHover'    => filter_var( $atts['pause'], FILTER_VALIDATE_BOOLEAN ),
+						'controlNav'      => filter_var( $atts['nav'], FILTER_VALIDATE_BOOLEAN ),
+						'directionNav'    => filter_var( $atts['arrows'], FILTER_VALIDATE_BOOLEAN ),
+						'slideshowSpeed'  => intval( $atts['speed'] ),
+					);
+					
 					// Init Flexslider
-					wp_add_inline_script( 'flexslider', 
-						'jQuery(document).ready(function($){
-							$("#bne-slider-id-'.$random_id.' .bne-testimonial-slider").flexslider({
-								animation: "'.$atts['animation'].'",
-								animationSpeed: '.$atts['animation_speed'].',
-								smoothHeight: '.$atts['smooth'].',
-								pauseOnHover: '.$atts['pause'].',
-								controlNav: '.$atts['nav'].',
-								directionNav: '.$atts['arrows'].',
-								slideshowSpeed: '.$atts['speed'].'
-							});
+					wp_add_inline_script( 'flexslider',
+						'jQuery(function($){
+							$("#bne-slider-id-'.$random_id.' .bne-testimonial-slider").flexslider('.wp_json_encode( $flex_options ).');
 						});'
 					);
 
 					// Slider Wrapper
-					$output .= '<div id="bne-slider-id-'.$random_id.'" class="bne-testimonial-slider-wrapper">';
+					$output .= '<div id="bne-slider-id-'.esc_js( $random_id ).'" class="bne-testimonial-slider-wrapper">';
 						$output .= '<div class="slides-inner">';
 							$output .= '<div class="bne-testimonial-slider bne-flexslider">';
 								$output .= '<ul class="slides">';

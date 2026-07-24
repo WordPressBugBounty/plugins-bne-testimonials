@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: BNE Testimonials
- * Version: 2.0.8.1
+ * Version: 2.0.8.2
  * Description: Display testimonials on any page or widget area as list or slider. Upgrade to PRO for additional layouts, themes, API, 5-star ratings and schema markup.
  * Author: Kerry Kline
  * Author URI: https://www.bnecreative.com
@@ -45,7 +45,7 @@ class BNE_Testimonials {
 	function __construct() {
 		
 		// Set Constants
-		define( 'BNE_TESTIMONIALS_VERSION', '2.0.8.1' );
+		define( 'BNE_TESTIMONIALS_VERSION', '2.0.8.2' );
 		define( 'BNE_TESTIMONIALS_DIR', dirname( __FILE__ ) );
 		define( 'BNE_TESTIMONIALS_URI', plugins_url( '', __FILE__ ) );
 		define( 'BNE_TESTIMONIALS_BASENAME', plugin_basename( __FILE__ ) );
